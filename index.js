@@ -1,5 +1,5 @@
 const password = document.querySelector("#password")
-const length = 9;
+const length = document.querySelector("#input-len").innerHTML
 const values = "abcdefghijklmnopqrstuvwxyz1234567890@#$%^&*"
 let string = ""
 
