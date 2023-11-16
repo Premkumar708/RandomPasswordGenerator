@@ -1,10 +1,20 @@
 const password = document.querySelector("#password")
-const length = document.querySelector("#input-len").innerHTML
-const values = "abcdefghijklmnopqrstuvwxyz1234567890@#$%^&*"
-let string = ""
+const lengthInput = document.querySelector("#input-len")
+const button = document.querySelector("#submit")
+const checkbox = document.querySelector("#ToUpperCase")
 
-for (let i = 0 ; i < length ; i++) {
-    const random = Math.floor(Math.random() * values.length)
-    string += values[random]
-}
-password.innerHTML = string
+const values = "abcdefghijklmnopqrstuvwxyz1234567890@#$%^&*"
+
+button.addEventListener("click",()=>{
+    const length = lengthInput.value;
+    let string = ""
+    for (let i = 0 ; i < length ; i++) {
+        const random = Math.floor(Math.random() * values.length)
+        string += values[random]
+    } 
+    if(checkbox.checked){
+        password.innerHTML = string.toUpperCase()
+    }else{
+        password.innerHTML = string
+    }    
+});
