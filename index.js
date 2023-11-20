@@ -1,20 +1,32 @@
-const password = document.querySelector("#password")
-const lengthInput = document.querySelector("#input-len")
-const button = document.querySelector("#submit")
-const checkbox = document.querySelector("#ToUpperCase")
+const password_el = document.querySelector('#input-text');
+const length_el = document.querySelector('#length');
+const upperCase = document.querySelector('#caps');
+const lowerCase = document.querySelector('#lowerCase');
+const symbol = document.querySelector('#symbols');
+const number = document.querySelector('#numbers')
 
-const values = "abcdefghijklmnopqrstuvwxyz1234567890@#$%^&*"
+const copy_api = document.querySelector("#copy");
+const submit = document.querySelector("#submit")
 
-button.addEventListener("click",()=>{
-    const length = lengthInput.value;
-    let string = ""
-    for (let i = 0 ; i < length ; i++) {
-        const random = Math.floor(Math.random() * values.length)
-        string += values[random]
-    } 
-    if(checkbox.checked){
-        password.innerHTML = string.toUpperCase()
-    }else{
-        password.innerHTML = string
-    }    
-});
+submit.addEventListener('click',generatePassword)
+
+const char_letters = "abcdefghijklmnopqrstuvwxyz";
+const char_numbers = "1234567890";
+const char_symbols ="!@#$%^&*()";
+
+let password = "";
+let length = length_el.value
+let char = "";
+
+function generatePassword() {
+    char += upperCase.checked ? char_letters.toUpperCase(): "";
+    char += lowerCase.checked ? char_letters.toLowerCase(): "";
+    char += symbol.checked ? char_symbols: "";
+    char += number.checked ? char_numbers: "";
+    
+    for(let i = 0 ; i < length; i++){
+        let rand = Math.floor(Math.random() * length)
+        password += char[rand]
+    }
+    password_el.value = password;
+}   

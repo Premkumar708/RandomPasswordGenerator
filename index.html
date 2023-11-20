@@ -4,13 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="number" name = "number" id="input-len">
-    <button type="submit" id="submit">submit</button>
-    <input type="checkbox"id="ToUpperCase"><label>ToUpperCase</label>
-    <h1 id="password"></h1>
+    <main>
+        <div class="content">
+            <h1>Password Generator</h1>
+            <label class="input-content">
+                <input type="text" 
+                    id="input-text"
+                    placeholder="Password"
+                    readonly>
+                <button class="Material-icons" id="copy">
+                    <span class="material-symbols-outlined">content_copy</span>
+                </button>
+            </label>
+
+            <label>
+                <span>password length</span>
+                <input type="number" id="length" value="16" >
+            </label>
+
+            <label>
+                <span>Include Caps</span>
+                <input type="checkbox" id="caps" checked>
+            </label>
+
+            <label>
+                <span>Include LowerCase</span>
+                <input type="checkbox" id="lowerCase" checked>
+            </label>
+
+            <label>
+                <span>Numbers only</span>
+                <input type="checkbox" id="numbers" checked>
+            </label>
+            
+            <label>
+                <span>Symbols</span>
+                <input type="checkbox" id="symbols" checked>
+            </label>
+
+            <button type="submit" name="submit" id="submit"> Generate password</button>
+
+        </div>
+    </main>
     <script src="index.js"></script>
 </body>
 </html>

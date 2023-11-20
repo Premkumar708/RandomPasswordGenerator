@@ -1,13 +1,109 @@
 *{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 body {
-     background-image: url("images/IMG-20230903-WA0001.jpg");
-     background-size: cover;
-     background-position: center;
-     background-attachment: fixed;
-     backdrop-filter: blur(5px);
-     text-align: center;
-     margin-top: 15vh;   
+    background-image: linear-gradient(to left ,grey,white,black ); 
+    color: whitesmoke 
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.content {
+    width: 100%;
+    max-width: 300px;
+    padding: 2rem 1rem;
+    background-color: gray;
+    border-radius: 1rem;
+}
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    appearance: none;
+    outline: none;
+    border: none;
+    background: none;
+} 
+
+input[type="checkbox"]{
+    cursor: pointer;
+}
+.input-content{
+    position: relative;
+    display: flex;
+    margin-bottom: 1rem;
+    width: 100%;  
+}
+.input-content::after{
+    content: '';
+    display: block;
+    background-image: linear-gradient(to left, black 30%,purple);
+    height: 3px;
+    position: absolute;
+    top:100%;
+    left: 0;
+    right: 0;
+}
+.input-content input {
+    flex: 1 1 0%;
+    padding: 0.5rem;
+    color: black;
+    margin-bottom: 5px;
+    background: none;
+    border:none;
+ 
+}
+.input-content input::placeholder{
+   color: black;
+   font-style: italic;
+   font-size: 1rem;
+}
+.input-content button {
+    background-image: linear-gradient(to bottom,purple,black 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+label {
+    display: flex;
+    margin: 2px;
+    user-select: none;
+    margin: 10px;
+}
+label span {
+    display: block;
+    flex: 1 1 0%;
+}
+.content input[type="number"]{
+    background: none;
+    border: none;
+    appearance: none;
+    text-align: right;
+}
+
+button[type="submit"]{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color:white;
+    background-image: linear-gradient(to left,white,black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+    background-size: 200%;
+    background-position: 25%;
+    transition: 0.3s ease-out;
+}
+button[type="submit"]:hover {
+    background-position: 55%;
 }
